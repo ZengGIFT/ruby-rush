@@ -8,7 +8,7 @@
 #  user_id      :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  total_rubies :integer
+#  total_rubies :integer          default(0)
 #
 
 class Post < ApplicationRecord

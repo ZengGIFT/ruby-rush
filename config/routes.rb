@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :digruby
+  resources :digruby do
+    member do
+      post :start_digging
+      post :select_mineral
+      post :dig_again
+    end
+  end
 
   namespace :admin do
     resources :users do

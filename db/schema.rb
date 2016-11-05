@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105044300) do
+ActiveRecord::Schema.define(version: 20161105064909) do
+
+  create_table "minerals_carts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "rubies_incart", default: 0
+    t.string   "aasm_state",    default: "new_cart"
+    t.text     "comment"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.index ["aasm_state"], name: "index_minerals_carts_on_aasm_state"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
