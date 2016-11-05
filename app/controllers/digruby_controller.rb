@@ -1,6 +1,6 @@
 class DigrubyController < ApplicationController
   def index
-
+    @minerals = current_mcart.minerals
   end
 
   def start_digging
@@ -50,7 +50,15 @@ class DigrubyController < ApplicationController
     return mcart
   end
 
-  def get_nine_minerals
-    
+  def get_nine_new_minerals
+    if current_mcart.minerals.present?
+      Mineral.delete_all
+    end
+    9.times do
+    end
+    end
   end
+
+
+
 end

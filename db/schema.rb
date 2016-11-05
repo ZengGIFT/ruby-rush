@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105064909) do
+ActiveRecord::Schema.define(version: 20161105091707) do
+
+  create_table "minerals", force: :cascade do |t|
+    t.integer  "minerals_cart_id"
+    t.integer  "rubies_inside_mineral"
+    t.string   "title",                 default: ""
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
 
   create_table "minerals_carts", force: :cascade do |t|
     t.integer  "user_id"
