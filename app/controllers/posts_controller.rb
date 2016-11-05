@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
 
-    if @post.save!
+    if @post.save
       redirect_to posts_path
     else
       render :new
@@ -28,11 +28,17 @@ class PostsController < ApplicationController
     if !is_actived_user?
       flash[:alert] = "请找老萨满验证激活用户，或者登陆"
       redirect_to digruby_index_path
+
     elsif current_user.ruby_amount >= 10
       current_user.ruby_amount -= 10
       current_user.save
+
       @post.votes.create
+      @post.total_rubies += 1
+      @post.save
+
       redirect_to posts_path
+
     else
       flash[:alert] = "you need more ruby"
       redirect_to digruby_index_path
