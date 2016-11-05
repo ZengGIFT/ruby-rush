@@ -13,42 +13,9 @@
 
 <hr>
 
-<% @minerals.each do |mineral| %>
-<% end %>
-<div class="container-fluid">
-  <table class="table">
-    <tr>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-      <td>
-        <%= link_to("5Rubies ", "#", class: "btn active lovely") %>
-      </td>
-    </tr>
-  </table>
-</div>
+<%= link_to("test",  get_nine_new_minerals_digruby_path(current_mcart),method: :post ) %>
+  <div class="row">
+    <%= @minerals.each do |mineral| %>
+      <%= link_to("", "#", class: "btn active lovely") %>
+    <% end %>
+  </div>

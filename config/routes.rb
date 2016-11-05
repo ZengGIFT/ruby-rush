@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       post :start_digging
       post :select_mineral
       post :dig_again
+      post :get_nine_new_minerals
     end
   end
 
