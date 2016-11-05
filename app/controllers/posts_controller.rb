@@ -26,10 +26,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if !is_actived_user?
+      flash[:alert] = "请找老萨满验证激活用户，或者登陆"
       redirect_to digruby_index_path
-    elsif
-      && current_user.ruby_amount >= 10
+    elsif current_user.ruby_amount >= 10
       current_user.ruby_amount -= 10
+      current_user.save
       @post.votes.create
       redirect_to posts_path
     else
