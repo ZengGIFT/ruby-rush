@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :posts do
+    member do
+      post :upvote
+    end
+  end
+
+  resources :digruby
+
   namespace :admin do
     resources :users do
       member do
@@ -11,5 +19,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'admin/users#index'
+  root 'posts#index'
 end

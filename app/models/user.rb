@@ -17,6 +17,8 @@
 #  updated_at             :datetime         not null
 #  is_admin               :boolean          default(FALSE)
 #  is_actived             :boolean          default(FALSE)
+#  pickax_amount          :integer          default(100)
+#  ruby_amount            :integer          default(3)
 #
 
 class User < ApplicationRecord
@@ -25,5 +27,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  has_many :posts
+  # has_many :votes
 end

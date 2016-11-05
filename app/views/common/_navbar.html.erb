@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Job Listing </a>
+            <a class="navbar-brand" href="/">Ruby Rush! </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -10,9 +10,21 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <% if !current_user %>
+                      <li>You have 100 rubys!</li>
+                      <li>You have 3 pickaxes!</li>
                       <li><%= link_to("sign up", new_user_registration_path) %></li>
                       <li><%= link_to("sign in", new_user_session_path) %></li>
                     <% else %>
+                      <li>
+                        <label class="label label-info">
+                          You have <%= pluralize(current_user.ruby_amount, "ruby") %>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="label label-info">
+                          You have <%= pluralize(current_user.pickax_amount, "pickax")%>
+                        </label>
+                      </li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle = "dropdown">
                           Hi!, <%= current_user.email  %>

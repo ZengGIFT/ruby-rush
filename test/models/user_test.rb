@@ -17,6 +17,8 @@
 #  updated_at             :datetime         not null
 #  is_admin               :boolean          default(FALSE)
 #  is_actived             :boolean          default(FALSE)
+#  pickax_amount          :integer          default(100)
+#  ruby_amount            :integer          default(3)
 #
 
 require 'test_helper'
