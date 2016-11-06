@@ -1,7 +1,6 @@
-class PostsController < ApplicationController
+class LeaderboardController < ApplicationController
   def index
-    @posts = Post.all.order('updated_at DESC')
-    # order on updated_at
+    @posts = Post.all.order('total_rubies DESC')
   end
 
   def new
@@ -12,8 +11,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
 
-    if @post.save!
-      redirect_to posts_path
+    if @post.save
+      redirect_to leadrboard_index_path
     else
       render :new
     end
@@ -28,4 +27,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description)
   end
+
 end

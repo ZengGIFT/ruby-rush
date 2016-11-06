@@ -1,21 +1,32 @@
 <h1>Dig Ruby!!!!!</h1>
 
 <% if current_mcart.new_cart? %>
-  <%= current_mcart.aasm_state %>
-  <%= link_to("Rush to Dig Rubies!", start_digging_digruby_path(current_mcart), method: :post, class: "btn btn-danger")  %>
 <% elsif current_mcart.cart_of_minerals? %>
-  <%= current_mcart.aasm_state %>
-  <%= link_to("select your mineral and get rubies", select_mineral_digruby_path(current_mcart), method: :post, class: "btn btn-primary") %>
 <% else %>
-  <%= current_mcart.aasm_state %>
-  <%= link_to("dig another cart of minerals!", dig_again_digruby_path(current_mcart), method: :post, class: "btn btn-info") %>
+  <%= link_to("dig another cart of minerals!", digruby_dig_again_path(current_mcart), method: :post, class: "btn btn-info") %>
+<% end %>
+
+<br>
+现在的矿车状态： <%= current_mcart.aasm_state %>
+<br>
+矿车里的宝石：  <%= current_mcart.rubies_incart %>
+<br>
+矿石的编号： <%= @mineral.present? %>
+
+<% @minerals.each do |mineral| %>
 <% end %>
 
 <hr>
 
-<%= link_to("test",  get_nine_new_minerals_digruby_path(current_mcart),method: :post ) %>
-  <div class="row">
-    <%= @minerals.each do |mineral| %>
-      <%= link_to("", "#", class: "btn active lovely") %>
-    <% end %>
-  </div>
+<% if !is_actived_user? %>
+  <%= render "not_actived_user"  %>
+<% elsif current_mcart.new_cart? %>
+  <%= link_to("Rush to Dig Rubies!", digruby_start_digging_path(current_mcart), method: :post, class: "btn btn-danger")  %>
+<% elsif current_mcart.cart_of_minerals? %>
+  <%#= render "cart_of_minerals" %>
+  <% @minerals.each do |mineral| %>
+    <%= link_to(mineral.id, select_mineral_digruby_mineral_path(current_mcart, mineral), method: :post , class: "btn mineral") %>
+  <% end %>
+<% else %>
+  <%= render "cart_of_rubies"  %>
+<% end %>

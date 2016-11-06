@@ -13,7 +13,7 @@
 
 class MineralsCart < ApplicationRecord
   has_many :minerals
-  
+
   include AASM
 
   aasm do

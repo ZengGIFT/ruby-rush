@@ -1,0 +1,66 @@
+<h1>Your Board! 看见自己提出问题和支持的问题的地方（后者有BUG）</h1>
+<h2>顺序为票数由少到多</h2>
+<%= link_to("New Question?", yourboard_index_path, class: "btn btn-danger btn-lg pull-right") %>
+
+<br><br><br><hr>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th> # </th>
+      <th> title </th>
+      <th> description </th>
+      <th> creator </th>
+      <th> updated_at </th>
+      <th> options </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <h2>你提出的问题</h2>
+    <% @created_posts.each do |post| %>
+      <tr>
+        <td> <%= post.id %> </td>
+        <td> <%= link_to(post.title, post, class: "btn btn-danger btn-lg") %> </td>
+        <td> <%= post.description %> </td>
+        <td> <%= post.user.email %> </td>
+        <td> <%= post.updated_at %> </td>
+        <td> <%= post.total_rubies %> </td>
+        <td>
+          <%= link_to("投票支持！", upvote_yourboard_path(post), method: :post, class: "btn btn-info") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<!-- <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th> # </th>
+      <th> title </th>
+      <th> description </th>
+      <th> creator </th>
+      <th> updated_at </th>
+      <th> options </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <h2>你投票支持的问题</h2>
+    <% @voted_posts.each do |post| %>
+      <tr>
+        <td> <%= post.id %> </td>
+        <td> <%= post.title %> </td>
+        <td> <%= post.description %> </td>
+        <td> <%= post.user.email %> </td>
+        <td> <%= post.updated_at %> </td>
+        <td> <%= post.total_rubies %> </td>
+        <td>
+          <%= link_to("顶这个问题！", upvote_yourboard_path(post), method: :post, class: "btn btn-info") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> -->

@@ -1,0 +1,5 @@
+<h1>你获得了</h1>
+
+<% @minerals.each do |mineral| %>
+  <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral") %>
+<% end %>

@@ -9,19 +9,12 @@ class DigrubyController < ApplicationController
       current_user.save
       current_mcart.dig_minerals!
 
-
       redirect_to digruby_index_path
     else
       direct_to_pickax_shop
     end
 
     get_nine_new_minerals
-  end
-
-  def select_mineral
-    current_mcart.select_mineral!
-
-    redirect_to digruby_index_path
   end
 
   def dig_again
@@ -43,9 +36,6 @@ class DigrubyController < ApplicationController
     @current_mcart ||= find_mcart
   end
 
-
-
-
   def get_nine_new_minerals
     if current_mcart.minerals.present?
       Mineral.delete_all
@@ -62,7 +52,6 @@ class DigrubyController < ApplicationController
   end
 
 
-
   private
 
   def find_mcart
@@ -73,9 +62,5 @@ class DigrubyController < ApplicationController
     session[:mcart_id] = mcart.id
     return mcart
   end
-
-
-
-
 
 end
