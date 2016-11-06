@@ -6,9 +6,9 @@
 <% elsif current_mcart.new_cart? %>
   <%= link_to("Rush to Dig Rubies!", digruby_start_digging_path(current_mcart), method: :post, class: "btn btn-danger")  %>
 <% elsif current_mcart.cart_of_minerals? %>
-  <%#= render "cart_of_minerals" %>
+  <%= render "cart_of_minerals" %>
   <% @minerals.each do |mineral| %>
-    <%= link_to(mineral.id, select_mineral_digruby_mineral_path(current_mcart, mineral), method: :post , class: "btn mineral") %>
+    <%= link_to(mineral.id, select_mineral_digruby_mineral_path(current_mcart, mineral), method: :post , class: "btn mineral digging") %>
   <% end %>
 <% else %>
   <%= render "cart_of_rubies"  %>

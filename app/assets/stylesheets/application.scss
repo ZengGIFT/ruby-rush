@@ -19,7 +19,16 @@
 @import "bootstrap";
 @import "font-awesome";
 
+@font-face {
+    font-family: 'beyond_wonderlandregular';
+    src: url('wonderland-webfont.woff2') format('woff2'),
+         url('wonderland-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+li.countstuff {
+    vertical-align: middle }
 
 body {
   //  background-image: image-url('pier.jpg');
@@ -49,6 +58,18 @@ body {
 .digging
 	{
 	    background:url("stone.png") no-repeat;
+			background-size: contain;
+	}
+
+// ADD THIS ONE
+.digging2
+	{
+		background:
+ 	 	linear-gradient(
+ 			rgba(31, 5, 5, 0.7),
+ 			rgba(31, 5, 5, 0.7)
+ 			),
+ 			url(stone.png) no-repeat;
 			background-size: contain;
 	}
 
@@ -94,13 +115,14 @@ $dropDown       : true;
     outline: 0 none;
 }
 
+// primary-start
 .btn-primary {
 	background-color: $bgDefault;
   border-color: $bgHighlight;
 	color: $colDefault
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
 	background-color: $bgHighlight;
   border-color: $bgHighlight;
 	color: $colDefault
@@ -116,6 +138,13 @@ $dropDown       : true;
   border-color: $bgHighlight;
 	color: $colDefault;
 	box-shadow: none;
+}
+// primary-end
+
+.btn-md {
+	width: 130px;
+	height: 33px;
+	text-align: left;
 }
 
 .btn-danger {
@@ -182,6 +211,10 @@ $dropDown       : true;
       color: $colHighlight; }}
   .navbar-text {
     color: $colDefault; }
+	.navbar-header {
+		font-family: "beyond_wonderlandregular";
+		font-size: 35px;
+	}
   .navbar-nav {
     > li {
       > a {

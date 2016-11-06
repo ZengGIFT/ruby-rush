@@ -19,22 +19,22 @@
           <div class="col-md-2">
             <ul class="" style="max-width: 300px; padding-top:20px;">
 
-              <li class='', style="list-style-type:none;"><%= link_to("Ruby Rush!", posts_path, class: "btn btn-primary active") %> </li>
-              <li class='', style="list-style-type:none;"><%= link_to("问题排行榜!", leaderboard_index_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to(content_tag(:i,"Ruby Rush!", class: "fa fa-diamond"), posts_path, class: "btn btn-primary btn-md") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("问题排行榜!", leaderboard_index_path, class: "btn btn-primary btn-md") %> </li>
               <% if current_user %>
-                <li class='', style="list-style-type:none;"><%= link_to("你支持的问题!", yourboard_index_path, class: "btn btn-primary active") %> </li>
+                <li class='', style="list-style-type:none;"><%= link_to("你支持的问题!", yourboard_index_path, class: "btn btn-primary btn-md") %> </li>
               <% else %>
-                <li class='', style="list-style-type:none;"><%= link_to("你支持的问题！", yourboard_index_path, class: "btn btn-primary active disabled") %> </li>
+                <li class='', style="list-style-type:none;"><%= link_to("你支持的问题！", yourboard_index_path, class: "btn btn-primary btn-md active disabled") %> </li>
               <% end %>
 
               <hr>
 
-              <li class='', style="list-style-type:none;"><%= link_to("挖更多的Ruby!", digruby_index_path, class: "btn btn-primary active") %> </li>
-              <li class='', style="list-style-type:none;"><%= link_to("搞更多的镐！", ptasks_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("挖更多的Ruby!", digruby_index_path, class: "btn btn-primary btn-md") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("搞更多的镐！", ptasks_path, class: "btn btn-primary btn-md") %> </li>
 
               <hr>
 
-              <li class='', style="list-style-type:none;"><%= link_to("游戏说明", about_index_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("游戏说明", about_index_path, class: "btn btn-primary btn-md") %> </li>
 
               <hr>
               <% if current_user && current_user.is_admin%>
