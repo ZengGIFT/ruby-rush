@@ -24,8 +24,8 @@ class ApplicationController < ActionController::Base
       flash[:alert] = "请验证激活用户，或者登陆"
       redirect_to about_index_path
 
-    elsif current_user.ruby_amount >= 10
-      current_user.ruby_amount -= 10
+    elsif current_user.ruby_amount >= 1
+      current_user.ruby_amount -= 1
       current_user.save
 
       v = Vote.new
@@ -59,5 +59,5 @@ class ApplicationController < ActionController::Base
     session[:mcart_id] = mcart.id
     return mcart
   end
-  
+
 end

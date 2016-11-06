@@ -20,6 +20,13 @@
 @import "font-awesome";
 
 
+@font-face {
+     font-family: 'beyond_wonderlandregular';
+     src: url('wonderland-webfont.woff2') format('woff2'),
+          url('wonderland-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+ }
 
 body {
   //  background-image: image-url('pier.jpg');
@@ -50,6 +57,8 @@ body {
 	{
 	    background:url("ruby.png") no-repeat;
 			background-size: contain;
+      width: 200px;
+      height: 200px;
 	}
 
 .rubystone-unselected
@@ -61,6 +70,9 @@ body {
   			),
   			url("ruby.png") no-repeat;
   		background-size: contain;
+      width: 100px;
+      height: 100px;
+      
   }
 
 // .rubystone_unselected
@@ -73,6 +85,8 @@ body {
 	{
 	    background:url("stone.png") no-repeat;
 			background-size: contain;
+      width: 150px;
+      height: 150px;
 	}
 
 .digging:hover
@@ -118,6 +132,12 @@ $dropDown       : true;
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
 }
+
+.btn-md {
+ 	width: 130px;
+ 	height: 33px;
+ 	text-align: left;
+ }
 
 .btn-primary {
 	background-color: $bgDefault;
@@ -207,6 +227,10 @@ $dropDown       : true;
       color: $colHighlight; }}
   .navbar-text {
     color: $colDefault; }
+	.navbar-header {
+ 		font-family: "beyond_wonderlandregular";
+ 		font-size: 35px;
+ 	}
   .navbar-nav {
     > li {
       > a {

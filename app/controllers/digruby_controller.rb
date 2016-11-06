@@ -45,7 +45,7 @@ class DigrubyController < ApplicationController
       r = rand(1..100)
       m = Mineral.new
       m.minerals_cart = current_mcart
-      m.rubies_inside_mineral = r
+      m.rubies_inside_mineral = rand_result
       m.save
     end
 
@@ -63,4 +63,22 @@ class DigrubyController < ApplicationController
     return mcart
   end
 
+  def rand_result
+    result = 0
+    r = rand(1..100)
+    if r > 96
+      result = 10
+    elsif r > 80
+      result = 5
+    elsif r > 43
+      result = 3
+    elsif r > 5
+      result = 1
+    else
+      result = 0
+    end
+
+    return result
+
+  end
 end
