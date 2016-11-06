@@ -17,15 +17,15 @@
 
           <div class="col-md-2">
             <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-              <li class="active"><%= link_to("Ruby Rush!", posts_path ) %> </li>
-              <li class="active"><%= link_to("LeaderBoard!", posts_path ) %> </li>
+              <li class="btn btn-primary btn-md fa fa-diamond"><%= link_to(" Ruby Rush!", posts_path ) %> </li>
+              <li class="btn btn-primary btn-md gradient"><%= link_to("LeaderBoard!", posts_path ) %> </li>
               <hr>
-              <li class="active"><%= link_to("Dig Ruby!", digruby_index_path ) %> </li>
-              <li class="active"><%= link_to("Equipment Store!", posts_path ) %> </li>
+              <li class="btn btn-primary btn-md gradient"><%= link_to("Dig Ruby!", digruby_index_path ) %> </li>
+              <li class="btn btn-primary btn-md gradient"><%= link_to("Equipment Store!", posts_path ) %> </li>
               <hr>
-              <li class="active"><%= link_to("About us!", posts_path ) %> </li>
+              <li class="btn btn-primary btn-md gradient"><%= link_to("About us!", posts_path ) %> </li>
               <% if current_user && current_user.is_admin%>
-                <li class="active"><%= link_to("AdminPainel!", admin_users_path ) %> </li>
+                <li class="btn btn-primary btn-md gradient"><%= link_to("AdminPainel!", admin_users_path ) %> </li>
               <% end %>
 
             </ul>
