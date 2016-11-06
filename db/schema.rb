@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 20161106061145) do
     t.integer  "minerals_cart_id"
     t.integer  "rubies_inside_mineral"
     t.string   "title",                 default: ""
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.boolean  "is_selected",           default: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "minerals_carts", force: :cascade do |t|
@@ -63,8 +64,8 @@ ActiveRecord::Schema.define(version: 20161106061145) do
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
     t.boolean  "is_actived",             default: false
-    t.integer  "pickax_amount",          default: 3
-    t.integer  "ruby_amount",            default: 100
+    t.integer  "pickax_amount",          default: 10
+    t.integer  "ruby_amount",            default: 10
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

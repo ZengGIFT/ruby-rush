@@ -4,7 +4,7 @@ class CreateMinerals < ActiveRecord::Migration[5.0]
       t.integer :minerals_cart_id
       t.integer :rubies_inside_mineral
       t.string :title, default: ""
-
+      t.boolean :is_selected, default: false
       t.timestamps
     end
   end

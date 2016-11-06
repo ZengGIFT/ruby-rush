@@ -1,5 +1,17 @@
-<h1>你获得了<%= current_mcart.rubies_incart %>个RUBY!</h1>
 
-<% @minerals.each do |mineral| %>
-  <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral") %>
-<% end %>
+<table>
+  <tr>
+    <% @minerals.each do |mineral| %>
+    <td>
+      <% if mineral.is_selected %>
+        <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral rubystone") %>
+      <h1>你获得了<%= current_mcart.rubies_incart %>个RUBY!</h1>
+      <% else %>
+        <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral rubystone-unselected") %>
+      <% end %>
+    </td>
+    <% end %>
+  </tr>
+</table>
+
+<%= link_to("再来一镐！", digruby_dig_again_path(current_mcart), method: :post, class: "btn btn-primary") %>

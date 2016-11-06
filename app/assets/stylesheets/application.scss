@@ -46,6 +46,29 @@ body {
   background-blend-mode: multiply;
 }
 
+.rubystone
+	{
+	    background:url("ruby.png") no-repeat;
+			background-size: contain;
+	}
+
+.rubystone-unselected
+  {
+  	background:
+  	 	linear-gradient(
+  			rgba(31, 5, 5, 0.7),
+  			rgba(31, 5, 5, 0.7)
+  			),
+  			url("ruby.png") no-repeat;
+  		background-size: contain;
+  }
+
+// .rubystone_unselected
+// 	{
+// 	    background:url("ruby.png") no-repeat;
+// 			background-size: contain;
+// 	}
+
 .digging
 	{
 	    background:url("stone.png") no-repeat;
@@ -54,13 +77,15 @@ body {
 
 .digging:hover
 {
-    background:url("axe.png") no-repeat;
+    // background:url("axe.png") no-repeat;
+    background:url("stonecrack.png") no-repeat;
 		background-size: contain;
 }
 
 .digging:active
 {
-    background:url("stonecrack.png") no-repeat;
+    // background:url("stonecrack.png") no-repeat;
+    background:url("ruby.png") no-repeat;
 		background-size: contain;
 }
 

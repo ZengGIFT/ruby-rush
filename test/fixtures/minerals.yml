@@ -6,6 +6,7 @@
 #  minerals_cart_id      :integer
 #  rubies_inside_mineral :integer
 #  title                 :string           default("")
+#  is_selected           :boolean          default(FALSE)
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #

@@ -41,7 +41,7 @@ class DigrubyController < ApplicationController
       Mineral.delete_all
     end
 
-    16.times do
+    3.times do
       r = rand(1..100)
       m = Mineral.new
       m.minerals_cart = current_mcart

@@ -1,12 +1,12 @@
 <font color="#BFBFBF">
 
-  <h1>Ruby Rush!按照被投票的时间从新到旧</h1>
+  <h1>问Xdite大神，挖Ruby宝藏</h1>
 
-<h2>可点击到具体的页面</h2>
+
 <% if is_actived_user? %>
-  <%= link_to("New Question?", new_post_path, class: "btn btn-danger btn-lg pull-right") %>
+  <%= link_to("你想问她什么？", new_post_path, class: "btn btn-danger btn-lg pull-right") %>
 <% else %>
- <%= link_to("New Question?", about_index_path, class: "btn btn-danger btn-lg pull-right", data: {confirm: "请注册并找管理员激活"}) %>
+ <%= link_to("你想问她什么?", about_index_path, class: "btn btn-danger btn-lg pull-right", data: {confirm: "请注册并找管理员激活"}) %>
 <% end %>
 
 <br><br><br><hr>
@@ -31,7 +31,7 @@
         <td> <%= post.user.email %> </td>
         <td> <%= post.updated_at %> </td>
         <td> <%= post.votes.count %> </td>
-        <td> <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, data: {confirm: '用1个ruby来顶？'}, class: "btn btn-info") %> </td>
+        <td> <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-info") %> </td>
       </tr>
     <% end %>
   </tbody>
@@ -41,7 +41,7 @@
 <!-- 以下是如何套用音频文件的路径演示 -->
 
 
-<audio src="song.mp3" type="audio/mpeg" controls>
+<!-- <audio src="song.mp3" type="audio/mpeg" controls>
 
 </audio>
 
@@ -51,4 +51,4 @@
 <input type="button" value="PLAY"  onclick="play()">
 <audio id="audio" src="click.mp3" ></audio>
 
-</font>
+</font> -->

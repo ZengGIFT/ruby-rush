@@ -1,5 +1,6 @@
 <h1>用铁镐敲碎矿石吧！</h1>
 
+
 <% @minerals.each do |mineral| %>
-  <%= link_to(mineral.id, select_mineral_digruby_mineral_path(current_mcart, mineral), method: :post , class: "btn mineral") %>
+  <%= link_to("", select_mineral_digruby_mineral_path(current_mcart, mineral), method: :post , class: "btn mineral digging") %>
 <% end %>
