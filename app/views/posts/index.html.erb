@@ -1,7 +1,11 @@
 <h1>Ruby Rush!按照被投票的时间从新到旧</h1>
 
 <h2>可点击到具体的页面</h2>
-<% link_to("New Question?", new_post_path, class: "btn btn-danger btn-lg pull-right") %>
+<% if is_actived_user? %>
+  <%= link_to("New Question?", new_post_path, class: "btn btn-danger btn-lg pull-right") %>
+<% else %>
+ <%= link_to("New Question?", about_index_path, class: "btn btn-danger btn-lg pull-right", data: {confirm: "请注册并找管理员激活"}) %>
+<% end %>
 
 <br><br><br><hr>
 

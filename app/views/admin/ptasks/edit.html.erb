@@ -1,0 +1,9 @@
+<h1>修改任务</h1>
+
+<%= simple_form_for [:admin, @ptask] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :reward %> pickaxes
+
+  <%= f.submit "submit" %>
+<% end %>

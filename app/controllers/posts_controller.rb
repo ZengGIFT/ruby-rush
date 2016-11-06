@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user! , only: [:new, :create]
+
   def index
     @posts = Post.all.order('updated_at DESC')
     # order on updated_at
@@ -22,6 +24,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
+
 
   private
 

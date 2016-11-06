@@ -16,19 +16,24 @@
       <div class="row">
 
           <div class="col-md-2">
-            <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-              <li class="active"><%= link_to("Ruby Rush!", posts_path ) %> </li>
-              <li class="active"><%= link_to("LeaderBoard!", leaderboard_index_path ) %> </li>
-              <li class="active"><%= link_to("yourBoard!", yourboard_index_path ) %> </li>
+            <ul class="" style="max-width: 300px; padding-top:20px;">
+
+              <li class='', style="list-style-type:none;"><%= link_to("Ruby Rush!", posts_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("LeaderBoard!", leaderboard_index_path, class: "btn btn-primary active") %> </li>
+              <% if current_user %>
+                <li class='', style="list-style-type:none;"><%= link_to("yourBoard!", yourboard_index_path, class: "btn btn-primary active") %> </li>
+              <% else %>
+                <li class='', style="list-style-type:none;"><%= link_to("yourBoard!", yourboard_index_path, class: "btn btn-primary active disabled") %> </li>
+              <% end %>
 
               <hr>
 
-              <li class="active"><%= link_to("Get Rubies!", digruby_index_path ) %> </li>
-              <li class="active"><%= link_to("Get pickaxes!", pickax_tasks_path ) %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("Get Rubies!", digruby_index_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("Get pickaxes!", ptasks_path, class: "btn btn-primary active") %> </li>
 
               <hr>
 
-              <li class="active"><%= link_to("About us!", about_index_path ) %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("About us!", about_index_path, class: "btn btn-primary active") %> </li>
 
               <hr>
               <% if current_user && current_user.is_admin%>

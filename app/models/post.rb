@@ -16,6 +16,6 @@ class Post < ApplicationRecord
   has_many :votes
 
   validates :title, presence: true
-  validates :title, presence: true
+  validates :description, presence: true
 
 end

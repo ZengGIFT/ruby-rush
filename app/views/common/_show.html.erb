@@ -1,0 +1,25 @@
+<h1>The Post</h1>
+
+<h2>单个页面怎样呈现比价好？ something nice to do here</h2>
+<hr>
+
+<p>
+  id
+  <%= @post.id %>
+</p>
+
+<hr>
+
+<h2>
+  title
+  <%= @post.title %>
+</h2>
+
+<hr>
+
+<h3>
+  description
+  <%= @post.description %>
+</h3>
+
+<td> <%= link_to("顶这个问题！", upvote_post_path(@post), method: :post, data: {confirm: '用1个ruby来顶？'}, class: "btn btn-info") %> </td>

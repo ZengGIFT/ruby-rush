@@ -5,8 +5,8 @@
 #  id          :integer          not null, primary key
 #  title       :string
 #  description :text
-#  price       :integer
-#  is_actived  :boolean          default(FALSE)
+#  reward      :integer
+#  is_hidden   :boolean          default(TRUE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

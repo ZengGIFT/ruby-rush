@@ -1,4 +1,5 @@
 class YourboardController < ApplicationController
+  before_action :authenticate_user!
   def index
     @created_posts = current_user.posts.order('total_rubies')
     @voted_posts = current_user.voted_posts.order('total_rubies')

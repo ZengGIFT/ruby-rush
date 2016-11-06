@@ -1,2 +1,0 @@
-class PickaxTasksController < ApplicationController
-end

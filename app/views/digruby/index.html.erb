@@ -1,22 +1,4 @@
-<h1>Dig Ruby!!!!!</h1>
-
-<% if current_mcart.new_cart? %>
-<% elsif current_mcart.cart_of_minerals? %>
-<% else %>
-  <%= link_to("dig another cart of minerals!", digruby_dig_again_path(current_mcart), method: :post, class: "btn btn-info") %>
-<% end %>
-
-<br>
-现在的矿车状态： <%= current_mcart.aasm_state %>
-<br>
-矿车里的宝石：  <%= current_mcart.rubies_incart %>
-<br>
-矿石的编号： <%= @mineral.present? %>
-
-<% @minerals.each do |mineral| %>
-<% end %>
-
-<hr>
+<h1>挖Ruby了！！！！</h1>
 
 <% if !is_actived_user? %>
   <%= render "not_actived_user"  %>

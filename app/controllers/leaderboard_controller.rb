@@ -1,4 +1,6 @@
 class LeaderboardController < ApplicationController
+  before_action :authenticate_user! , only: [:new, :create]
+
   def index
     @posts = Post.all.order('total_rubies DESC')
   end
@@ -12,7 +14,7 @@ class LeaderboardController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to leadrboard_index_path
+      redirect_to :back
     else
       render :new
     end

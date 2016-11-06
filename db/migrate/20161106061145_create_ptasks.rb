@@ -3,8 +3,8 @@ class CreatePtasks < ActiveRecord::Migration[5.0]
     create_table :ptasks do |t|
       t.string :title
       t.text :description
-      t.integer :price
-      t.boolean :is_actived, default: false
+      t.integer :reward
+      t.boolean :is_hidden, default: true
       t.timestamps
     end
   end

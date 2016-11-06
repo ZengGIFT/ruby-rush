@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PickaxTasksControllerTest < ActionDispatch::IntegrationTest
+class PtasksControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

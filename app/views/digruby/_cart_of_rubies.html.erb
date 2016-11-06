@@ -1,4 +1,4 @@
-<h1>你获得了</h1>
+<h1>你获得了<%= current_mcart.rubies_incart %>个RUBY!</h1>
 
 <% @minerals.each do |mineral| %>
   <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral") %>

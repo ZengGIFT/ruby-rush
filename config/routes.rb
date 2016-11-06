@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :pickax_tasks
+  resources :ptasks
 
 
 
@@ -51,7 +51,12 @@ Rails.application.routes.draw do
         post :set_admin
       end
     end
-    resources :pickax_tasks
+    resources :ptasks do
+      member do
+        post :hide
+        post :publish
+      end
+    end
   end
 
   root 'posts#index'

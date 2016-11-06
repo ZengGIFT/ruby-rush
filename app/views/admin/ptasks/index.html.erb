@@ -1,5 +1,6 @@
 <h1>后台发布pickax任务</h1>
-<%= link_to("新建任务", new_admin_pickax_task_path, class: "btn btn-primary pull-right") %>
+
+<%= link_to("新建任务", new_admin_ptask_path, class: "btn btn-primary pull-right") %>
 
 <table class="table table-bordered">
   <thead>
@@ -32,11 +33,18 @@
         </td>
         <td>
           <%= pluralize(ptask.reward, "pickax") %>
-          2131231
         </td>
         <td>
-          123231312
-          <%= link_to("edit", edit_admin_ptask_path, class: "btn btn-primary") %>
+          <% if ptask.is_hidden %>
+          <label class="label label-danger">隐藏</label>
+          <% else %>
+          <label class="label label-success">公开</label>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to("edit", edit_admin_ptask_path(ptask), class: "btn btn-primary") %>
+          <%= link_to("hide", hide_admin_ptask_path(ptask), method: :post, class: "btn btn-primary") %>
+          <%= link_to("publish", publish_admin_ptask_path(ptask), method: :post, class: "btn btn-primary") %>
         </td>
       </tr>
     <% end %>

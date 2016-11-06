@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20161106061145) do
   create_table "ptasks", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "price"
-    t.boolean  "is_actived",  default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "reward"
+    t.boolean  "is_hidden",   default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
