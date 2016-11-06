@@ -1,0 +1,21 @@
+<h1>Dig Ruby!!!!!</h1>
+
+<% if current_mcart.new_cart? %>
+  <%= current_mcart.aasm_state %>
+  <%= link_to("Rush to Dig Rubies!", start_digging_digruby_path(current_mcart), method: :post, class: "btn btn-danger")  %>
+<% elsif current_mcart.cart_of_minerals? %>
+  <%= current_mcart.aasm_state %>
+  <%= link_to("select your mineral and get rubies", select_mineral_digruby_path(current_mcart), method: :post, class: "btn btn-primary") %>
+<% else %>
+  <%= current_mcart.aasm_state %>
+  <%= link_to("dig another cart of minerals!", dig_again_digruby_path(current_mcart), method: :post, class: "btn btn-info") %>
+<% end %>
+
+<hr>
+
+<%= link_to("test",  get_nine_new_minerals_digruby_path(current_mcart),method: :post ) %>
+  <div class="row">
+    <%= @minerals.each do |mineral| %>
+      <%= link_to("", "#", class: "btn lovely digging"), :onclick => "play()" %>
+    <% end %>
+  </div>

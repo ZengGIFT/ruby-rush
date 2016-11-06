@@ -33,6 +33,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'annotate'
+gem 'aasm'
+gem 'pry'
 
 group :production do
   gem "pg"

@@ -16,3 +16,15 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+
+
+// $(".audioButton").on("click", function() {
+//   $(".audio-play")[0].currentTime = 0;
+//   return $(".audio-play")[0].play();
+// });
+
+
+function play(){
+		 var audio = document.getElementById("audio");
+		 audio.play();
+							 }

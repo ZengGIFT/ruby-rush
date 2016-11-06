@@ -1,0 +1,28 @@
+<h1>all users in casino</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th> # </th>
+      <th> email </th>
+      <th> is_admin? </th>
+      <th> is_actived? </th>
+      <th> options </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td> <%= user.id %> </td>
+        <td> <%= user.email %> </td>
+        <td> <%= user.is_admin %> </td>
+        <td> <%= user.is_actived %> </td>
+        <td>
+          <%= link_to("active", active_admin_user_path(user), method: :post, class: "btn btn-default" ) %>
+          <%= link_to("disactive", dis_active_admin_user_path(user), method: :post, class: "btn btn-default" ) %>
+          <%= link_to("set admin", set_admin_admin_user_path(user), method: :post, class: "btn btn-default" ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
