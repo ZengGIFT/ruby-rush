@@ -52,13 +52,19 @@ body {
 
 .digging:hover
 {
-    background:url("stonecrack.png") no-repeat;
+    background:url("axe.png") no-repeat;
 		background-size: contain;
 }
 
 .digging:active
 {
-    background:url("axe.png") no-repeat;
+    background:url("stonecrack.png") no-repeat;
+		background-size: contain;
+}
+
+.digging:focus
+{
+    background:url("stonecrack.png") no-repeat;
 		background-size: contain;
 }
 

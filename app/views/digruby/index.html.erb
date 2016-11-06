@@ -16,6 +16,6 @@
 <%= link_to("test",  get_nine_new_minerals_digruby_path(current_mcart),method: :post ) %>
   <div class="row">
     <%= @minerals.each do |mineral| %>
-      <%= link_to("", "#", class: "btn lovely digging") %>
+      <%= link_to("", "#", class: "btn lovely digging"), :onclick => "play()" %>
     <% end %>
   </div>

@@ -36,4 +36,52 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+
+
+<p>1-works with assets</p><audio src="assets/song.mp3" type="audio/mpeg" controls>
+    Your browser does not support the audio element.
+</audio>
+
+
+<br>
+
+<%= audio_tag "song.mp3", class: "audio-play" %>
+<p class="btn btn-primary audioButton">Play</p>
+
+
+
+<p>2-works with public folder</p><audio src="song.mp3" type="audio/mpeg" controls>
+    Your browser does not support the audio element.
+</audio>
+
+<p>3-works with assets</p><audio src="assets/click.mp3" type="audio/mpeg" controls>
+    Your browser does not support the audio element.
+</audio>
+
+<p>4</p><%= audio_tag "assets/song.mp3", class: "audio-play" %>
+
+<p>5</p><audio src="<%= audio_path 'assets/song.mp3'%>" type="audio/mpeg" controls>
+    Your browser does not support the audio element.
+</audio>
+
+
+<p>6-works with assets</p>
+<audio src="<%= audio_path 'click.mp3'%>" type="audio/mpeg" controls>
+    Your browser does not support the audio element.
+</audio>
+
+
+<button onclick="play" type="button">Play</button>
+
+
+
+
+
+<input type="button" value="PLAY"  onclick="play()">
+<audio id="audio" src="click.mp3" ></audio>
+
+
 </font>
