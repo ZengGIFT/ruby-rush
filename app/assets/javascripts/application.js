@@ -16,3 +16,10 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+
+
+
+function play(){
+		 var audio = document.getElementById("audio");
+		 audio.play();
+							 }

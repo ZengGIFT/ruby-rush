@@ -1,4 +1,6 @@
-<h1>Ruby Rush!按照被投票的时间从新到旧</h1>
+<font color="#BFBFBF">
+
+  <h1>Ruby Rush!按照被投票的时间从新到旧</h1>
 
 <h2>可点击到具体的页面</h2>
 <% if is_actived_user? %>
@@ -34,3 +36,19 @@
     <% end %>
   </tbody>
 </table>
+
+
+<!-- 以下是如何套用音频文件的路径演示 -->
+
+
+<audio src="song.mp3" type="audio/mpeg" controls>
+
+</audio>
+
+<audio src="<%= audio_path 'click.mp3'%>" type="audio/mpeg" controls>
+</audio>
+
+<input type="button" value="PLAY"  onclick="play()">
+<audio id="audio" src="click.mp3" ></audio>
+
+</font>

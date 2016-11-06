@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<font color="#BFBFBF">
   <head>
     <title>Rubyrush</title>
     <%= csrf_meta_tags %>
@@ -19,21 +20,21 @@
             <ul class="" style="max-width: 300px; padding-top:20px;">
 
               <li class='', style="list-style-type:none;"><%= link_to("Ruby Rush!", posts_path, class: "btn btn-primary active") %> </li>
-              <li class='', style="list-style-type:none;"><%= link_to("LeaderBoard!", leaderboard_index_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("问题排行榜!", leaderboard_index_path, class: "btn btn-primary active") %> </li>
               <% if current_user %>
-                <li class='', style="list-style-type:none;"><%= link_to("yourBoard!", yourboard_index_path, class: "btn btn-primary active") %> </li>
+                <li class='', style="list-style-type:none;"><%= link_to("你支持的问题!", yourboard_index_path, class: "btn btn-primary active") %> </li>
               <% else %>
-                <li class='', style="list-style-type:none;"><%= link_to("yourBoard!", yourboard_index_path, class: "btn btn-primary active disabled") %> </li>
+                <li class='', style="list-style-type:none;"><%= link_to("你支持的问题！", yourboard_index_path, class: "btn btn-primary active disabled") %> </li>
               <% end %>
 
               <hr>
 
-              <li class='', style="list-style-type:none;"><%= link_to("Get Rubies!", digruby_index_path, class: "btn btn-primary active") %> </li>
-              <li class='', style="list-style-type:none;"><%= link_to("Get pickaxes!", ptasks_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("挖更多的Ruby!", digruby_index_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("搞更多的镐！", ptasks_path, class: "btn btn-primary active") %> </li>
 
               <hr>
 
-              <li class='', style="list-style-type:none;"><%= link_to("About us!", about_index_path, class: "btn btn-primary active") %> </li>
+              <li class='', style="list-style-type:none;"><%= link_to("游戏说明", about_index_path, class: "btn btn-primary active") %> </li>
 
               <hr>
               <% if current_user && current_user.is_admin%>
@@ -53,4 +54,5 @@
       <!-- ./container-fluid -->
     <%= render 'common/footer' %>
   </body>
+</font>
 </html>
