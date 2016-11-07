@@ -13,6 +13,7 @@
       <th> description </th>
       <th> creator </th>
       <th> updated_at </th>
+      <th> count of votes </th>
       <th> options </th>
     </tr>
   </thead>
@@ -25,10 +26,10 @@
         <td> <%= post.user.email %> </td>
         <td> <%= post.updated_at %> </td>
         <td>
-          <%= post.votes.count %>
+            <i class="fa fa-diamond" aria-hidden="true" style="color: red;"></i> x <%= post.total_rubies %>
         </td>
         <td>
-          <%= link_to("vote for it!!!", upvote_leaderboard_path(post), method: :post, class: "btn btn-info") %>
+          <%= link_to("vote for it!!!", upvote_leaderboard_path(post), method: :post, class: "btn btn-danger") %>
         </td>
       </tr>
     <% end %>

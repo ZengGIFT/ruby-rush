@@ -5,6 +5,7 @@ class MineralsController < ApplicationController
     @mineral.is_selected = true
     @mineral.save
 
+
     current_mcart.rubies_incart = @mineral.rubies_inside_mineral
     current_mcart.save
 

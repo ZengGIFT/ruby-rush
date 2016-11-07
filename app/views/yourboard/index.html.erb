@@ -25,7 +25,9 @@
         <td> <%= post.description %> </td>
         <td> <%= post.user.email %> </td>
         <td> <%= post.updated_at %> </td>
-        <td> <%= post.total_rubies %> </td>
+        <td>
+            <i class="fa fa-diamond" aria-hidden="true" style="color: red;"></i> x <%= post.total_rubies %>
+        </td>
         <td>
           <%= link_to("投票支持！", upvote_yourboard_path(post), method: :post, class: "btn btn-info") %>
         </td>

@@ -1,21 +1,17 @@
 
 
-<p>
-  <%= @post.id %>
-</p>
-
-<hr>
-
 <h2>
-  title
   <%= @post.title %>
 </h2>
-
 <hr>
 
+<h6>
+  创建者： <%= @post.user.email %>
+</h6>
+<hr>
+  <i class="fa fa-diamond" aria-hidden="true" style="color: red;"></i> x <%= @post.total_rubies %>
 <h3>
-  description
   <%= @post.description %>
 </h3>
 
-<td> <%= link_to("顶这个问题！", upvote_post_path(@post), method: :post, class: "btn btn-info") %> </td>
+<td> <%= link_to("顶这个问题！", upvote_post_path(@post), method: :post, class: "btn btn-danger") %> </td>

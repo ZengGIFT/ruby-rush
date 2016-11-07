@@ -11,7 +11,7 @@
 
 <br><br><br><hr>
 
-<table class="table table-bordered">
+<table class="table">
   <thead>
     <tr>
       <th> # </th>
@@ -19,7 +19,11 @@
       <th> description </th>
       <th> creator </th>
       <th> updated_at </th>
+      <th>
+        count votes
+      </th>
       <th> options </th>
+
     </tr>
   </thead>
   <tbody>
@@ -30,13 +34,33 @@
         <td> <%= post.description %></td>
         <td> <%= post.user.email %> </td>
         <td> <%= post.updated_at %> </td>
-        <td> <%= post.votes.count %> </td>
-        <td> <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-info") %> </td>
+        <td>
+            <i class="fa fa-diamond" aria-hidden="true" style="color: red;"></i> x <%= post.total_rubies %>
+        </td>
+        <td> <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-danger") %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<div class="row">
+  <% @posts.each do |post| %>
+  <div class="col-xs-6 col-md-4 post thumbnail" style="height: 200px;">
+    <%= link_to post do %><%= post.votes.count %>
+      <h3>
+        <%= post.title %>
+      </h3>
+      <hr>
+      <p>
+        创建者： <%= post.user.email %>
+      </p>
+      <p>
+        <%= post.description %>
+      </p>
+      <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-info") %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
 
 <!-- 以下是如何套用音频文件的路径演示 -->
 
