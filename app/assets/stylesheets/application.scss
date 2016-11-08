@@ -28,6 +28,15 @@
      font-style: normal;
  }
 
+ @font-face {
+    font-family: 'blackchanceryregular';
+    src: url('blkchcry-webfont.woff2') format('woff2'),
+         url('blkchcry-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
   //  background-image: image-url('pier.jpg');
 	 background-attachment: fixed;
@@ -73,13 +82,18 @@ body {
   width: 150px;
   background: url('sign.png');
   background-size:contain;;
-  
+
 }
 
 .jumbotron {
 			width:100%;
 			height:400px;
-			background: url("street.jpg");
+      background:
+    	 	linear-gradient(
+    			rgba(31, 5, 5, 0.6),
+    			rgba(31, 5, 5, 0.6)
+    			),
+    			url("treasure.jpg") no-repeat;
 			background-size:cover;
 			background-position: center;
 }
@@ -264,9 +278,14 @@ $dropDown       : true;
   .navbar-text {
     color: $colDefault; }
 	.navbar-header {
- 		font-family: "beyond_wonderlandregular";
+ 		font-family: "blackchanceryregular";
  		font-size: 35px;
  	}
+  .navbar-subscript {
+		font-style: italic;
+		font-size: 28px;
+		vertical-align: sub;
+	}
   .navbar-nav {
     > li {
       > a {

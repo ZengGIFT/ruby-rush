@@ -1,27 +1,22 @@
 
-<table>
-  <tr>
-    <% @minerals.each do |mineral| %>
-    <td>
-      <% if mineral.is_selected %>
-        <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral rubystone") %>
-      <% else %>
-        <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral rubystone-unselected") %>
-      <% end %>
-    </td>
+<br><br><br><br>
+<div class="row">
+  <% @minerals.each do |mineral| %>
+  <div class="col-md-4">
+    <% if mineral.is_selected %>
+    <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral rubystone") %>
+    <h1>你获得了<%= current_mcart.rubies_incart %>个RUBY!</h1>
+    <% else %>
+    <%= link_to(mineral.rubies_inside_mineral, "#", class: "btn mineral rubystone-unselected") %>
     <% end %>
-  </tr>
-  <tr>
-    <% @minerals.each do |mineral| %>
-    <td>
-      <% if mineral.is_selected %>
-      <h1>你获得了<%= current_mcart.rubies_incart %>个RUBY!</h1>
-      <% else %>
-      <% end %>
-    </td>
-    <% end %>
-  </tr>
 
-</table>
+  </div>
+  <% end %>
 
-<%= link_to("再来一镐！", digruby_dig_again_path(current_mcart), method: :post, class: "btn btn-primay") %>
+</div>
+
+    <%= link_to("再来一镐！", digruby_dig_again_path(current_mcart), method: :post, class: "btn btn-danger btn-lg") %>
+
+<audio autoplay>
+  <source src="assets/treasure.mp3" type="audio/mpeg">
+</audio>

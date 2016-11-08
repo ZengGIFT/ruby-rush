@@ -1,7 +1,7 @@
 <font color="#BFBFBF">
 
   <h1>问Xdite大神，挖Ruby宝藏</h1>
-
+  <h2>      －－请提出你的问题，被你投票支持的问题会被顶上来</h2>
 
 <% if is_actived_user? %>
   <%= link_to("你想问她什么？", new_post_path, class: "btn btn-danger btn-lg pull-right") %>
@@ -37,12 +37,12 @@
         <td>
             <i class="fa fa-diamond" aria-hidden="true" style="color: red;"></i> x <%= post.total_rubies %>
         </td>
-        <td> <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-danger") %> </td>
+        <td> <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-primary") %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<div class="row">
+<!-- <div class="row">
   <% @posts.each do |post| %>
   <div class="col-xs-6 col-md-4 post thumbnail" style="height: 200px;">
     <%= link_to post do %><%= post.votes.count %>
@@ -56,11 +56,11 @@
       <p>
         <%= post.description %>
       </p>
-      <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-info") %>
+      <%= link_to("顶这个问题！", upvote_post_path(post), method: :post, class: "btn btn-primary") %>
     <% end %>
   </div>
   <% end %>
-</div>
+</div> -->
 
 <!-- 以下是如何套用音频文件的路径演示 -->
 

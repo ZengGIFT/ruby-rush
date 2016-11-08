@@ -2,9 +2,14 @@
 
 <div onclick="play()">
   <% @minerals.each do |mineral| %>
+  <div class="col-md-4">
     <%= link_to("", select_mineral_digruby_mineral_path(current_mcart, mineral), method: :post , class: "btn mineral digging") %>
+  </div>
   <% end %>
 </div>
+
+<br><br><br>
+<h3 class="pull-right">每敲碎一个矿石，消耗一个铁镐，随机获得Ruby</h3>
 
 <!-- <html>
 <head>
@@ -31,4 +36,5 @@ $(document).ready(function(){
 
 
 <!-- <input type="button" value="PLAY"  onclick="play()"> -->
-<audio id="audio" src="click.mp3" ></audio>
+<!-- <audio id="audio" src="assets/pickshort2.mp3" ></audio> -->
+<audio id="audio" src="assets/pickshort2.mp3" ></audio>

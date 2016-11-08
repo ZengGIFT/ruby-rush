@@ -13,6 +13,7 @@ class MineralsController < ApplicationController
     current_user.ruby_amount += income
     current_user.save
 
+    sleep 1.2
     redirect_to digruby_index_path
   end
 end
